@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>News Portal Layout</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+
+   
+    .news-container {
+      width: 100%;
+      white-space: nowrap;   
+
+    }
+    .box {
+      display: inline-block; 
+      vertical-align: top;   
+      padding: 15px;         
+      border: 2px solid #333;
+      margin: 5px;           
+      box-sizing: border-box;
+      min-height: 400px;
+      white-space: normal; 
+    }
+
+    
+    .sidebar {
+      width: 20%;            
+      background-color: #ffdede;
+    }
+
+    .main-content {
+      width: 58%;           
+      background-color: #e3f2fd;
+    }
+
+    .ads {
+      width: 20%;           
+      background-color: #e8f5e9;
+    }
+
+    h2 {
+      margin-top: 0;
+      text-align: center;
+    }
+
+    p {
+      text-align: justify;
+      font-size: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 style="text-align:center;">Daily News Portal</h1>
+
+ 
+  <div class="news-container">
+
+   
+    <div class="box sidebar">
+      <h2>Categories</h2>
+      <p>World News</p>
+      <p>Technology</p>
+      <p>Business</p>
+      <p>Sports</p>
+      <p>Entertainment</p>
+    </div>
+
+   
+    <div class="box main-content">
+      <h2>Main Article</h2>
+      <p>
+        Technology is evolving rapidly across the globe. Artificial intelligence, cloud computing,
+        and cybersecurity are reshaping industries and transforming daily life. Businesses are now
+        investing heavily in digital transformation to stay competitive in this fast-paced world.
+      </p>
+      <p>
+        Experts believe that the next decade will bring even more revolutionary innovations,
+        especially in automation and data science.
+      </p>
+    </div>
+
+  
+    <div class="box ads">
+      <h2>Advertisements</h2>
+      <p>Buy the latest smartphone!</p>
+      <p>50% Discount on laptops!</p>
+      <p>Learn Web Development Online!</p>
+    </div>
+
+  </div>
+
+</body>
+</html>
