@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dark / Light Mode Toggle</title>
+</head>
+<body id="page">
+
+    <header id="header">
+        <h1>My Portfolio Website</h1>
+    </header>
+
+    <button id="toggleBtn" onclick="toggleTheme()">Switch to Dark Mode</button>
+
+    <section id="content">
+        <p>Welcome to my portfolio! Enjoy switching themes.</p>
+    </section>
+
+    <footer id="footer">
+        <p>© 2025 My Portfolio</p>
+    </footer>
+
+    <script>
+        let isDark = false; 
+
+       
+        const page = document.getElementById("page");
+        const header = document.getElementById("header");
+        const content = document.getElementById("content");
+        const footer = document.getElementById("footer");
+        const toggleBtn = document.getElementById("toggleBtn");
+
+        function toggleTheme() {
+            if (isDark) {
+               
+                page.style.background = "white";
+                header.style.color = "black";
+                content.style.color = "black";
+                footer.style.color = "black";
+
+                header.style.borderBottom = "1px solid #ccc";
+                content.style.border = "1px solid #ccc";
+                footer.style.borderTop = "1px solid #ccc";
+
+                toggleBtn.textContent = "Switch to Dark Mode";
+                isDark = false;
+
+            } else {
+              
+                page.style.background = "black";
+                header.style.color = "white";
+                content.style.color = "white";
+                footer.style.color = "white";
+
+                header.style.borderBottom = "1px solid #555";
+                content.style.border = "1px solid #555";
+                footer.style.borderTop = "1px solid #555";
+
+                toggleBtn.textContent = "Switch to Light Mode";
+                isDark = true;
+            }
+        }
+
+       
+        toggleTheme();  
+        toggleTheme();
+    </script>
+
+</body>
+</html>

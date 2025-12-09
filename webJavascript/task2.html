@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Slider - HTML & JS Only</title>
+</head>
+<body>
+
+    <h2>Travel Destinations Slider</h2>
+
+    <!-- Main Image -->
+    <img id="sliderImage" src="" width="600" height="350">
+
+    <br><br>
+
+    <!-- Navigation Buttons -->
+    <button onclick="prevImage()">Previous</button>
+    <button onclick="nextImage()">Next</button>
+
+    <script>
+      
+        const images = [
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqvFdpefJi2hOnOjNhVL78frJ-clk2_NqW8Q&s",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSrwt-QkdEOYV_1H1c6MZtPyEYDycUKsH_LA&s",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzlVR9yR4vBii20Kd9juIEA5DPEwHyB8_Mwg&s",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQe1qWOtpCw6FZjM4oeCbCRd2lqVwrFR3hqIg&s"
+        ];
+
+        let index = 0;
+
+      
+        const sliderImage = document.getElementById("sliderImage");
+
+      
+        sliderImage.src = images[index];
+
+        
+        function nextImage() {
+            index = (index + 1) % images.length;
+            sliderImage.src = images[index];
+        }
+
+      
+        function prevImage() {
+            index = (index - 1 + images.length) % images.length;
+            sliderImage.src = images[index];
+        }
+
+       
+        setInterval(nextImage, 3000);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Management System</title>
+</head>
+<body>
+
+    <h2>Student Management System</h2>
+
+   
+    <input type="text" id="name" placeholder="Enter Name">
+    <input type="text" id="roll" placeholder="Enter Roll">
+    <input type="text" id="dept" placeholder="Enter Department">
+
+    <button onclick="addStudent()">Add Student</button>
+
+    <br><br>
+
+    
+    <table border="1" cellpadding="8">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Roll</th>
+                <th>Department</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody id="studentTable"></tbody>
+    </table>
+
+    <script>
+        function addStudent() {
+          
+            const name = document.getElementById("name").value.trim();
+            const roll = document.getElementById("roll").value.trim();
+            const dept = document.getElementById("dept").value.trim();
+            const tableBody = document.getElementById("studentTable");
+
+           
+            if (name === "" || roll === "" || dept === "") {
+                alert("All fields are required!");
+                return;
+            }
+
+           
+            const row = document.createElement("tr");
+
+            
+            row.innerHTML = `
+                <td>${name}</td>
+                <td>${roll}</td>
+                <td>${dept}</td>
+                <td><button onclick="deleteRow(this)">Delete</button></td>
+            `;
+
+            
+            tableBody.appendChild(row);
+
+            
+            document.getElementById("name").value = "";
+            document.getElementById("roll").value = "";
+            document.getElementById("dept").value = "";
+        }
+
+        function deleteRow(button) {
+           
+            button.parentElement.parentElement.remove();
+        }
+    </script>
+
+</body>
+</html>

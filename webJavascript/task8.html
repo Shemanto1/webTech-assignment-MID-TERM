@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Registration Form</title>
+</head>
+<body>
+
+<h2>Smart Registration Form</h2>
+
+
+<select id="userType" onchange="showFields()">
+    <option value="">--Select User--</option>
+    <option value="Student">Student</option>
+    <option value="Teacher">Teacher</option>
+</select>
+
+<br><br>
+
+
+<div id="rollDiv" style="display:none;">
+    Roll Number: <input type="text" id="roll">
+</div>
+
+
+<div id="deptDiv" style="display:none;">
+    Department: <input type="text" id="dept">
+</div>
+
+<script>
+function showFields() {
+    const type = document.getElementById("userType").value;
+
+    if(type === "Student") {
+        document.getElementById("rollDiv").style.display = "block";
+        document.getElementById("deptDiv").style.display = "none";
+    } else if(type === "Teacher") {
+        document.getElementById("rollDiv").style.display = "none";
+        document.getElementById("deptDiv").style.display = "block";
+    } else {
+        document.getElementById("rollDiv").style.display = "none";
+        document.getElementById("deptDiv").style.display = "none";
+    }
+}
+</script>
+
+</body>
+</html>

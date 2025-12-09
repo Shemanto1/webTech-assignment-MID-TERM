@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Analyzer</title>
+</head>
+<body>
+
+<h3>Text Analysis Tool</h3>
+
+<textarea id="inputText" rows="6" cols="40"></textarea><br><br>
+
+<button onclick="analyze()">Analyze Text</button>
+
+<div id="result"></div>
+
+<script>
+function analyze() {
+    let text = document.getElementById("inputText").value;
+
+   
+    let chars = text.length;
+
+    
+    let words = text.trim() === "" ? 0 : text.trim().split(/\s+/).length;
+
+   
+    let reversed = text.split("").reverse().join("");
+
+   
+    document.getElementById("result").innerHTML =
+        "<p><b>Characters:</b> " + chars + "</p>" +
+        "<p><b>Words:</b> " + words + "</p>" +
+        "<p><b>Reversed:</b> " + reversed + "</p>";
+}
+</script>
+
+</body>
+</html>

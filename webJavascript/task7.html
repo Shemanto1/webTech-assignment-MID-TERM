@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Style Control Panel</title>
+</head>
+<body>
+
+<h2>Dynamic Style Control Panel</h2>
+
+
+<p id="myText" style="padding:10px; border:1px solid #000; width:60%;">
+    This is a sample paragraph. Use the buttons below to change its style dynamically.
+</p>
+
+<!-- Buttons -->
+<button onclick="changeBackground()">Change Background Color</button>
+<button onclick="increaseFont()">Increase Font Size</button>
+<button onclick="centerText()">Center Text</button>
+<button onclick="resetStyle()">Reset Style</button>
+
+<script>
+    
+    let currentFontSize = 16; 
+
+    function changeBackground() {
+        const p = document.getElementById("myText");
+     
+        const colors = ["red", "green", "blue", "yellow", "pink", "orange", "lightblue", "lightgreen"];
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        p.style.backgroundColor = randomColor;
+    }
+
+    function increaseFont() {
+        const p = document.getElementById("myText");
+        currentFontSize += 2; 
+        p.style.fontSize = currentFontSize + "px";
+    }
+
+    function centerText() {
+        const p = document.getElementById("myText");
+        p.style.textAlign = "center";
+    }
+
+    function resetStyle() {
+        const p = document.getElementById("myText");
+        p.style.backgroundColor = "white";
+        p.style.fontSize = "16px";
+        p.style.textAlign = "left";
+        currentFontSize = 16; 
+    }
+</script>
+
+</body>
+</html>
